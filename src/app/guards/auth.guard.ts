@@ -1,20 +1,21 @@
 // import { AuthService } from './../services/auth.service';
 // import { Observable } from 'rxjs';
-
+//
 // import { Injectable } from '@angular/core';
 // import {
 //   ActivatedRouteSnapshot,
 //   CanActivateFn,
 //   Router,
 //   RouterStateSnapshot,
+//
 // } from '@angular/router';
-
+//
 // @Injectable({
 //   providedIn: 'root',
 // })
 // export class AuthGuard implements CanActivateFn {
 //   constructor(private authService: AuthService, private router: Router) {}
-
+//
 //   canActivateFn(
 //     route: ActivatedRouteSnapshot,
 //     state: RouterStateSnapshot
@@ -37,7 +38,6 @@ import {
   ActivatedRouteSnapshot,
   CanActivate,
   CanDeactivate,
-  Route,
   Router,
   RouterStateSnapshot,
   UrlTree,
@@ -60,10 +60,10 @@ export class AuthGuard implements CanActivate, CanDeactivate<unknown> {
     | boolean
     | UrlTree {
     if (!this.authService.isLoggedIn()) {
-      this.router.navigate(['/login']);
+      this.router.navigate(['login']);
       return false;
     }
-    return true;
+return true
   }
 
   canDeactivate(

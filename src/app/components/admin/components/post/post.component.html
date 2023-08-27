@@ -1,1 +1,27 @@
-<div>{{ post.title }}</div>
+<div
+        class="mx-auto mt-6 grid max-w-3xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-6 lg:mx-0 lg:max-w-none lg:grid-cols-3"
+>
+<article class="flex max-w-xl flex-col items-start justify-between" *ngIf="post | async as post">
+    <div class="group relative">
+        <h3
+                class="mt-5 text-lg font-bold leading-2 text-gray-900 group-hover:text-gray-600"
+        >
+                {{post.title}}
+
+        </h3>
+        <p class="mt-5 line-clamp-3 text-xl leading-6 text-gray-900">{{post.body}}</p>
+    </div>
+    <div class="relative mt-2 flex items-center gap-x-4">
+        <div class="text-sm leading-6">
+            <p class="font-bold text-gray-900">
+                <a href="#">
+                    <span class="inset-0">{{post.userId}}</span>
+                </a>
+            </p>
+        </div>
+    </div>
+</article>
+<div class="text-sm font-bold leading-6 text-gray-900">
+<button [routerLink]="['../../']">back to posts page</button>
+</div>
+</div>

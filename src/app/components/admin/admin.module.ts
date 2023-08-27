@@ -4,15 +4,15 @@ import { AdminDashboardComponent } from './components/admin-dashboard/admin-dash
 import { TableComponent } from './components/table/table.component';
 import { AdminRoutingModule } from './admin-routing.module';
 import { HeaderComponent } from './components/header/header.component';
-import { PostComponent } from './components/post/post.component';
 import { HttpClientModule } from '@angular/common/http';
+import {PostComponent} from "./components/post/post.component";
 
 @NgModule({
   declarations: [
     HeaderComponent,
     TableComponent,
     AdminDashboardComponent,
-    PostComponent,
+    PostComponent
   ],
   imports: [CommonModule, AdminRoutingModule, HttpClientModule],
 })

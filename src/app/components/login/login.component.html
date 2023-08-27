@@ -24,7 +24,6 @@
           <input
             id="login"
             formControlName="login"
-            type="login"
             class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
           />
         </div>
@@ -53,7 +52,6 @@
             formControlName="password"
             type="password"
             autocomplete="current-password"
-            required
             class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
           />
         </div>
@@ -71,6 +69,8 @@
       <p class="text-red-500" *ngIf="formError">{{ formError }}</p>
       <div>
         <button
+                *ngIf="authService.isLoggedIn"
+                (click)="submitLogin()"
           [disabled]="loginForm.invalid || !!formError"
           type="submit"
           class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
@@ -79,5 +79,8 @@
         </button>
       </div>
     </form>
+  </div>
+  <div>
+    <p class="mb-0">Don't have an account? <a routerLink="../registration" class="text-white-50 fw-bold">Sign Up</a></p>
   </div>
 </div>

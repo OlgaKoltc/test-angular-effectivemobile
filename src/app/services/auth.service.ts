@@ -24,14 +24,14 @@ export class AuthService {
     login: string;
     password: string;
   }): Observable<string | boolean> {
-    if (userInfo.login === 'admin' && userInfo.password === 'Admin123ADMIN') {
-      this.setToken('alksflkgsklgjslkjffksdgjnsad');
+    if (userInfo.login === 'admin@gmail.com' && userInfo.password === 'Admin123456') {
+      this.setToken('jjdsiyeefdxgvsvs');
       return of(true);
     }
     return throwError(() => new Error('Failed Login'));
   }
 
   logout() {
-    this.router.navigate(['/login']);
+    this.router.navigate(['login']);
   }
 }

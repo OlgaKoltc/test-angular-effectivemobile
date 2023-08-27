@@ -11,12 +11,12 @@ const routes: Routes = [
     component: AdminDashboardComponent,
     children: [
       { path: 'header', component: HeaderComponent },
-
       {
         path: 'home',
         component: TableComponent,
       },
-      { path: 'posts/:id', component: PostComponent },
+      {path: 'home/posts/post', redirectTo: 'posts', pathMatch: 'full'},
+      { path: 'home/posts/:id', component: PostComponent },
       { path: '', redirectTo: 'home', pathMatch: 'full' },
     ],
   },

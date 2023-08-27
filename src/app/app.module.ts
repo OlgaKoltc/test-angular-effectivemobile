@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { LayoutComponent } from './components/ui/layout/layout.component';
 import { HttpClientModule } from '@angular/common/http';
-import { CommonModule } from '@angular/common';
+import {CommonModule} from "@angular/common";
 
 @NgModule({
   declarations: [AppComponent, LoginComponent, LayoutComponent],

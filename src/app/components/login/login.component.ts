@@ -15,14 +15,14 @@ export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
 
   formGroup: any;
-  constructor(private router: Router, private authService: AuthService) {}
+  constructor(private router: Router, public authService: AuthService) {}
 
   submitLogin() {
-    this.login.emit(this.formGroup.value);
-    // this.authService.login(this.loginForm.value).subscribe({
-    //   next: () => this.router.navigate(['admin']),
-    //   error: (err: { message: string }) => alert(err.message),
-    // });
+    // this.login.emit(this.formGroup.value);
+    this.authService.login(this.loginForm.value).subscribe({
+      next: () => this.router.navigate(['admin']),
+      error: (err: { message: string }) => alert(err.message),
+    });
   }
 
   ngOnInit(): void {
@@ -36,10 +36,11 @@ export class LoginComponent implements OnInit {
       ]),
     });
     if (this.authService.isLoggedIn()) {
-      this.router.navigate(['/admin']);
+      this.router.navigate(['admin']);
     }
   }
   onFormChange() {
     this.formError = '';
   }
+
 }
