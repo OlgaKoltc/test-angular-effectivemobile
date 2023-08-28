@@ -18,7 +18,6 @@ export class LoginComponent implements OnInit {
   constructor(private router: Router, public authService: AuthService) {}
 
   submitLogin() {
-    // this.login.emit(this.formGroup.value);
     this.authService.login(this.loginForm.value).subscribe({
       next: () => this.router.navigate(['admin']),
       error: (err: { message: string }) => alert(err.message),
